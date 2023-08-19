@@ -2,17 +2,16 @@
 <%= form_for @event do |f| %>
 <%= render "devise/shared/error_messages", resource: resource %>
 
-<h2>Basic Info</h2>
-<p>Name your event and tell event-goers why they should come. Add details that highlight what makes it unique.</p>
-<div class="form-group mb-3">
-  <%= f.label :title %>
+<h2>Info Basic</h2>
+<p>Nommez votre événement et dites aux participants pourquoi ils devraient venir. Ajoutez des détails qui mettent en évidence ce qui le rend unique.</p><div class="form-group mb-3">
+  <%= f.label :titre %>
   <%= f.text_field :title, autofocus: true, autocomplete: "title",
               class: 'form-control text-success', require: true
       %>
 </div>
 <div class="form-row mb-2">
   <div class="col">
-      <%= f.label :organizer_id %>
+      <%= f.label :organisateur %>
       <div>
       <% if !@organizers.nil? %>
         <%= f.select :organizer_id, options_for_select(@organizers.collect{|o| [o.name, o.id]}, params[:organizer_id]),
@@ -23,17 +22,15 @@
       </div>
   </div>
   <div class="col">
-    <%= f.label :price%>
+    <%= f.label :prix%>
     <%= f.number_field :price, class:"form-control text-danger", value: params[:price] %>
   </div>
 
 </div>
 <div class="mb-4">
     <span><small>
-        This profile describes a unique organizer and shows all of the events on one page.
-        <a href="#">
-          View Organizer Info
-        </a>
+Ce profil décrit un organisateur unique et affiche tous les événements sur une seule page.        <a href="#">
+        Afficher les informations sur l'organisateur</a>
       </small></span>
   </div>
 
@@ -49,7 +46,7 @@
     <% end %>
   </div>
   <div class="col">
-    <%= f.label :category_id %>
+    <%= f.label :categorie %>
     <% if !@categories.nil? %>
     <div>
       <%= f.select :category_id, options_for_select(@categories.collect{|o| [o.title, o.id]}),
@@ -62,8 +59,7 @@
 
 <div class="form-group mb-5">
   <%= f.label :tags %><br>
-  <small>Improve discoverability of your event by adding tags relevant to the subject matter.</small>
-  <input class="form-control text-success mt-2">
+<small>Améliorez la visibilité de votre événement en ajoutant des balises pertinentes au sujet.</small>  <input class="form-control text-success mt-2">
   <div>
     <small>0/10 tags</small>
   </div>
@@ -72,9 +68,8 @@
 <hr>
 
 <div class="form-group mb-3">
-  <h3>Location</h3>
-  <span>Help people in the area discover your event and let attendees know where to show up.</span>
-</div>
+  <h3>Lieu</h3>
+<span>Aidez les gens de la région à découvrir votre événement et indiquez aux participants où se présenter.</span></div>
 <div class="form-row mb-3">
   <div class="col">
     <%= f.label :type_location %>
@@ -83,9 +78,9 @@
     %>
   </div>
    <div class="col">
-        <%= f.label :max_quantity%>
+        <%= f.label :quantite_maximal%>
         <%= f.text_field :max_quantity, class:"form-control text-success", value: params[:max_quantity] %>
-        <small>Unlimited or Exact number.</small>
+        <small>Nombre illimité ou exact.</small>
   </div>
 </div>
    
@@ -93,36 +88,38 @@
   <%= f.label :location %>
   <%= f.text_field :location, class: 'form-control text-success'%>
   <div class="mt-1">
-  <small>You cans skip this field if you select 'Online Event' or 'To be annouced'.</small>
+  <small>Vous pouvez ignorer ce champ si vous sélectionnez "Événement en ligne" ou "À annoncer"
+
+.</small>
   </div>
 </div>
 <hr>
 
 <div class="form-group mb-3">
-  <h3>Date And Time</h3>
-  <span>Tell event-goers when your event starts and ends so they can make plans to attend.</span>
+  <h3>Date Et Heure</h3>
+  <span>Informez les spectateurs du début et de la fin de votre événement afin qu'ils puissent planifier leur participation.</span>
 </div>
 
 <div class="form-row mb-2">
   <div class="col">
-    <%= f.label :start_date %>
+    <%= f.label :Date_Debut %>
     <%=  f.text_field :start_date, id: 'startDate', class: "form-control dpicker text-success", require: true %>
     
   </div>
   <div class="col">
-    <%= f.label :start_at %>
+    <%= f.label :Debut %>
      <%=  f.text_field :start_at, id: 'startAt',class: "form-control tpicker text-info", require: true %>
   </div>
 </div>
 
 <div class="form-row mb-5">
   <div class="col">
-    <%= f.label :end_date %>
+    <%= f.label :Date_Fin %>
     <%=  f.text_field :end_date, id: 'startDate', class: "form-control dpicker text-success", require: true %>
     
   </div>
   <div class="col">
-    <%= f.label :end_at %>
+    <%= f.label :Fin %>
      <%=  f.text_field :end_at, id: 'endAt',class: "form-control tpicker text-info", require: true %>
   </div>
 </div>
@@ -130,9 +127,9 @@
 <hr>
 
 <div class="form-group mb-5">
-  <h3>Main Event Image</h3>
-  <span>This is the first image attendees will see at the top of your listing. Use a high quality image: 2160x1080px
-    (2:1 ratio)</span>
+  <h3>Affiche Principal de Votre Evènement</h3>
+  <span>Il s'agit de l'image que les participants verront en haut de votre annonce. Utilisez une image de haute qualité :  2160x1080px
+    (2:1 ratio)</span>Le premier
   <section class="drag-drop-phot">
     <%# <form action="" method="POST" enctype="multipart/form-data"> %>
 
@@ -140,10 +137,10 @@
         <div class="preview-zone hidden">
           <div class="box box-solid">
             <div class="box-header with-border">
-              <div><b>Preview</b></div>
+              <div><b>Previsualisez</b></div>
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-danger btn-xs remove-preview">
-                  <i class="fa fa-times"></i> Reset This Form
+                  <i class="fa fa-times"></i> Supprimez ce formulaire
                 </button>
               </div>
             </div>
@@ -153,13 +150,13 @@
         <div class="dropzone-wrapper--cus">
           <div class="dropzone-desc">
             <i class="glyphicon glyphicon-download-alt"></i>
-            <p>Choose an image file or drag it here.</p>
+            <p>Choisissez une affiche ou glissez deposez.</p>
           </div>
           <input type="file" name="img_logo" class="dropzone">
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary ml-0">Upload</button>
+      <button type="submit" class="btn btn-primary ml-0">Télécharger</button>
     <%# </form> %>
   </section>
 
@@ -168,7 +165,7 @@
 
 <div class="form-group mb-3">
   <h3>Description</h3>
-  <span>Add more details to your event like your schedule, sponsors, or featured guests.</span>
+  <span>Ajoutez plus de détails à votre événement, comme votre emploi du temps, vos sponsors ou vos invités vedettes.</span>
   <%= f.text_area :description, class: "form-control text-success" ,rows: "15" %>
 </div>
 <div class="form-check mb-5">

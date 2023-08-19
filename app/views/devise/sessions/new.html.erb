@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <% content_for :title, "Log In" %>
+  <% content_for :title, "Connexion" %>
 </head>
 <body>
   <!-- MAIN BODY -->
@@ -10,7 +10,7 @@
      <div class="container">
         <div class="row">
           <div class="col-md-10 col-lg-8 mx-auto">
-            <h2 class="mb-4 text-center">LOG IN</h2>
+            <h2 class="mb-4 text-center">Connexion</h2>
 
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                 <%= render "devise/shared/error_messages", resource: resource %>
@@ -39,7 +39,7 @@
               <% end %>
 
               <div class='text-center mx-auto mt-2'>
-                <span>Or log in with</span>
+                <span>Ou Vous connecté avec?</span>
                 <div class='form-row mb-2 mt-3'>
                   <div class="col">
                     <a href='#' class='btn btn-google rounded-pill btn-block'>
@@ -58,7 +58,7 @@
 
               <div class='text-center mx-auto mt-4'>
                 <small>
-                  <span>Don't have an account yet?</span>
+                  <span>Pas encore de compte?</span>
                   <%= render "devise/shared/links" %>
                 </small>
               </div>

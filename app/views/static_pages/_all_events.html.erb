@@ -3,7 +3,7 @@
  
   <% if @all_events.nil? || @all_events.count < 1 %>
     <div class="mt-4">
-      No events to show here
+      Pas d'Evenements 
     </div>
   <% else %>
   <%= render partial: 'card_event', locals: {events: @all_events} %>

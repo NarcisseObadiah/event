@@ -3,7 +3,7 @@
  
  <% if @food_drink_events.nil? || @food_drink_events.count < 1 %>
     <div class="mt-4">
-      No events to show here
+        Pas d'Evènement
     </div>
   <% else %>
   <%= render partial: 'card_event', locals: {events: @food_drink_events} %>

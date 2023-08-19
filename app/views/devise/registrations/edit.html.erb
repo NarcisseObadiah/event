@@ -11,7 +11,7 @@
      <div class="container">
       <div class='row'>
         <div class='col-lg-8 col-md-10 mx-auto mt-5'>
-            <h2 class="text-center">Edit <%= resource_name.to_s.humanize %></h2>
+            <h2 class="text-center">Modifiez <%= resource_name.to_s.humanize %></h2>
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
                   <%= render "devise/shared/error_messages", resource: resource %>
                 <div class="form-group mb-3">
@@ -22,11 +22,11 @@
                 </div>
 
                 <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                  <div>En attente de la confirmation de: <%= resource.unconfirmed_email %></div>
                 <% end %>
 
                 <div class="form-group mb-3">
-                  <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+                  <%= f.label :password %> <i>(laissez intact si vous ne souhaitez pas Changez)</i><br />
                   <%= f.password_field :password, autocomplete: "new-password",
                           class:'form-control', required: true, minlength: 6
                   %>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="fomr-group mb-3">
-                  <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+                  <%= f.label :current_password %> <i>(nous avons besoin de votre mot de passe actuel pour confirmer vos modifications)</i><br />
                   <%= f.password_field :current_password, autocomplete: "current-password",
                           class:'form-control', required: true, minlength: 6
                   %>
@@ -51,16 +51,16 @@
                 </div>
           <% end %>
 
-          <h3 class="mb-3">Cancel my account</h3>
+          <h3 class="mb-3">Suprimez le comte</h3>
           <div class="d-flex mb-5 justify-content-between">
-              <div class="text-info mr-3 mt-2">Unhappy? </div>
+              <div class="text-info mr-3 mt-2">Mecontent? </div>
               <%= button_to "Cancel my account", registration_path(resource_name),
                 data: { confirm: "Are you sure?" }, method: :delete ,
                 class: "btn btn-danger"%>
           </div>
 
           <%= link_to :back , class: 'btn btn-dark' do %>
-              <i class="fas fa-arrow-left"></i> Back
+              <i class="fas fa-arrow-left"></i> Retour
           <% end %>
         </div>
       </div>

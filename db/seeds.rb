@@ -75,7 +75,7 @@ end
 puts "Create users"
 
 User.all.each do |user|
-  Organizer.create(name: user.name, user: user)
+  Organizer.create(name: user.first_name, user: user)
 end
 puts "Create Organizer"
 

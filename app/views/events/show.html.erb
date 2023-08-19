@@ -29,7 +29,7 @@
 
             <div class="event-intro-organizer d-flex mb-5" style="font-size: 1.2rem">
               <div class="py-2 mr-2">
-                by
+                par
                 <a href="#">
                   <strong> <%= @event.organizer.name %> </strong>
                 </a>
@@ -40,9 +40,9 @@
             </div>
             <div class="event-intro-price text-success" style="font-size: 1.1rem">
               <% if @event.price < 1 %>
-              FREE
+              Gratuit
               <% else %>
-              € <%= @event.price %>
+               <%= @event.price %> F cfa
               <% end %>
             </div>
           </div>
@@ -63,7 +63,7 @@
           <% if @event.is_free? %>
               Ticket
           <% else %>
-              Register
+              Reservez
           <% end %>
             
           </a>
@@ -81,20 +81,20 @@
             <%= @event.description%>
           </div>
           <div class="col-md-4">
-            <h5>Date And Time</h5>
+            <h5>Date et Heure</h5>
             <div class="event-content-date mb-5">
               <div class="mb-2">
-                Start date: <span class="text-info"><%= get_day_verbose(@event.start_date)%></span><br>
-                At: <span class="text-info"><%= get_only_time(@event.start_date)%></span>
+                Date debut: <span class="text-info"><%= get_day_verbose(@event.start_date)%></span><br>
+                A: <span class="text-info"><%= get_only_time(@event.start_date)%></span>
               </div>
               <div>
-                End date: <span class="text-info"><%= get_day_verbose(@event.end_date)%></span><br>
-                At: <span class="text-info"><%= get_only_time(@event.end_at)%></span>
+                Date fin: <span class="text-info"><%= get_day_verbose(@event.end_date)%></span><br>
+                A: <span class="text-info"><%= get_only_time(@event.end_at)%></span>
               </div>
             </div>
 
             <div class="event-content-location mb-5">
-              <h5>Location</h5>
+              <h5>Lieu</h5>
               <span>
                 <% if @event.type_location == 'Avenue'%>
                 <%= @event.location %>
@@ -133,7 +133,7 @@
 
 
       <div class="event-organizer">
-        <h5 class="text-left">Organizer: </h5>
+        <h5 class="text-left">Organisateur: </h5>
         <div class="col mb-5">
           <img class="img-thumbnail rounded mx-auto d-block"
             src="<%= @event.organizer.user.avatar || 'https://source.unsplash.com/random?avatar'%>"><br>
@@ -152,10 +152,10 @@
          <div class="d-flex mb-5">
             <div class="mx-auto">
               <a class="btn btn-outline-primary mr-3" href="#">
-                  Follow
+                  Suivre
               </a>
                 <a class="btn btn-outline-dark" href="#">
-                  Contact
+                  Contactez
               </a>
             </div>
           </div>
@@ -163,7 +163,7 @@
       <hr class="mb-5">
 
       <div class="event-you-may-like">
-          <h5 class="text-center">Other events you may like</h5>
+          <h5 class="text-center">Autres evenements qui peuvent vous interresez</h5>
           <div class="row">
           <% @same_events.each_with_index do |event, index| %>
               <div class="col-md-4">

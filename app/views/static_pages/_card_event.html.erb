@@ -11,14 +11,14 @@
                             alt="Bologna">
                         <div class="card-money">
                             <% if event.is_free? %>
-                                 FREE
+                                 GRATUIT
                             <% else %>
-                                 € <%= event.price %>
+                                 F cfa <%= event.price %>
                             <% end %>
                         </div>
                         <div class="card-online">
                             <% if event.is_online? %>
-                            <span>ONLINE</span>
+                            <span>En ligne</span>
                             <% end %>
                         </div>
                       </div>
@@ -30,7 +30,7 @@
                   <% if !event.is_online? %>
                    <a href="#" class="d-none d-lg-block card-text"><%= get_city_from_address(event.location) %></a>
                  <% else %>
-                     <a href="#" class="d-none d-lg-block card-text">Online Event</a>
+                     <a href="#" class="d-none d-lg-block card-text">Evènement en ligne</a>
                  <% end %>
                   
                   <div class="row">

@@ -21,16 +21,16 @@
             Account since <%= get_time_verbose(current_user.created_at) unless current_user.nil? %>
           </div>
           <div class="col">
-              <h1>Account Information</h1>
+              <h1>Information De compte</h1>
           </div>
           <hr>
 
           <div class="account-email mb-5">
-            <h3 class="mb-3">Account email address</h3>
+            <h3 class="mb-3">Addresse mail</h3>
             <span class="text-success"><%= current_user.email %></span>
             <div>
               <a href="<%= accountsettings_secret_path %>"
-              class="btn btn-light border-info mt-2">Change</a>
+              class="btn btn-light border-info mt-2">Changez</a>
             </div>
           </div>
 
@@ -45,14 +45,14 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label class="control-label">Upload File</label>
+                          <label class="control-label">Telechargez fichier</label>
                           <div class="preview-zone hidden">
                             <div class="box box-solid">
                               <div class="box-header with-border">
                                 <div><b>Preview</b></div>
                                 <div class="box-tools pull-right">
                                   <button type="button" class="btn btn-danger btn-xs remove-preview">
-                                    <i class="fa fa-times"></i> Reset This Form
+                                    <i class="fa fa-times"></i> Effacez formulaire
                                   </button>
                                 </div>
                               </div>
@@ -62,7 +62,7 @@
                           <div class="dropzone-wrapper">
                             <div class="dropzone-desc">
                               <i class="glyphicon glyphicon-download-alt"></i>
-                              <p>Choose an image file or drag it here.</p>
+                              <p>Choisissez un image ou glissez deposez</p>
                             </div>
                             <input type="file" name="img_logo" class="dropzone" 
                                     
@@ -75,7 +75,7 @@
                     <div class="row">
                       <div class="col-md-12">
                         <button type="button" 
-                        class="btn btn-primary pull-right">Upload</button>
+                        class="btn btn-primary pull-right">Telechargez</button>
                       </div>
                     </div>
                   </div>
@@ -88,7 +88,7 @@
             <div class="contact-info mb-5">
               <div class="row">
                 <div class="col-lg-10">
-                  <h3>Contact Information</h3>
+                  <h3>Information du contact</h3>
 
                   <div class="form-group mb-3 ml-0">
                     <%= f.label "Prefix" %>
@@ -153,11 +153,11 @@
                         <%= f.text_field :address, class: "form-control text-success" %>
                       </div>
                       <div class="form-group mb-3">
-                        <label for="">City</label>
+                        <label for="">Ville</label>
                         <input type="text" class= "form-control text-success">
                       </div>
                       <div class="form-group mb-3 ml-0">
-                        <label for="">Country</label>
+                        <label for="">Pays</label>
                         <input type="text" class="form-control text-success">
                       </div>
                       <div class="form-row mb-4 ml-0">
@@ -166,7 +166,7 @@
                           <input type="text" class="form-control text-success">
                         </div>
                         <div class="col">
-                          <label for="">State</label>
+                          <label for="">Region</label>
                         </div>
                       </div>
                   </div>
@@ -189,8 +189,8 @@
 
   <% else %>
   <div class="container text-center">
-      <h3>You need to loggin to see your account settings.</h2>
-      Back to <a href="<%= new_user_session_path %>">Login</a>
+      <h3>Vous devez vous connectes afin de voir vos Paramètrea.</h2>
+      Retour a la <a href="<%= new_user_session_path %>">Connexion</a>
   </div>
   <% end %>
 </body>
